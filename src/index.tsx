@@ -8,7 +8,9 @@ export const history = createBrowserHistory();
 
 ReactDOM.render(
     <Router history={history}>
-        <App />
+		<App
+			history={history}
+		/>
     </Router>,
 document.getElementById("app")
 );

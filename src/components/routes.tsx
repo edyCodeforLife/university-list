@@ -1,17 +1,24 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Login } from "../container/login/index";
-import App from "./app";
+import { SignUp } from "../container/sign_up/index"
 
-const Main = () => {
+const Main = (props) => {
 	return (
 		<Switch>
 			<Route exact path="/">
 				<Redirect to="/login" />
 			</Route>
+
 			<Route exact path="/login"
 				render={() => {
-					return(<Login />)
+					return(<Login {...props} />)
+				}}
+			/>
+
+			<Route exact path="/sign_up"
+				render={() => {
+					return(<SignUp {...props} />)
 				}}
 			/>
 		</Switch>
