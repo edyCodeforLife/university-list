@@ -1,0 +1,1 @@
+export const url_list_university = "https://demo3418193.mockable.io/"

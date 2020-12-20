@@ -39,6 +39,8 @@ function _Login(props) {
 			messageText = "Username atau Password tidak boleh Kosong";
 		}
 		messageText !== "" && message.warning(messageText,1);
+
+		LS.set("currentLoggedIn", userLogin.userName)
 	}
 
 	return (
