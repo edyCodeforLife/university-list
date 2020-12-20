@@ -139,6 +139,15 @@
 		padding: 30px;
 	}
 
+	.adjustContainer {
+		overflow: scroll;
+		padding: 20px;
+	}
+
+	.containerScreen > p {
+		text-align: left;
+	}
+
 	@media (max-width: 600px) {
 		.containerScreen {
 			margin-top: 70px;
@@ -243,7 +252,7 @@
 		text-align: center;
 	}
 
-	.containerDeliveryTime {
+	.containerFilterCountry {
 		width: 95%;
 		height: 30px;
 		margin-left: 20px;

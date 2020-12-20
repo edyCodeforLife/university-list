@@ -34,6 +34,7 @@ function _HomeScreen(props:IHomeScreenProps) {
 		<div className="homeContainer">
 			<Header
 				userName={LS.get("currentLoggedIn")}
+				{...props}
 			/>
 			<div className="containerScreen">
 				<Row style={{padding: '0px 30px', marginTop: isMobile()? 170 : 0 }}>

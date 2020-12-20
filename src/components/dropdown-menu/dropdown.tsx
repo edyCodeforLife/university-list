@@ -20,7 +20,7 @@ function _DropdownList(props: IDropdownProps) {
 	}
 
     return(
-		<div className="containerDeliveryTime">
+		<div className="containerFilterCountry">
 			<Select
 				allowClear
 				style={{ width: '100%' }}

@@ -3,18 +3,23 @@ import "../app.scss";
 import { Row, Col } from 'antd';
 
 function _Header(props) {
-    const { style = {}, userName } = props;
+	const { history, userName } = props;
+
+	const redirectTo = (route) => {
+		history.push(route);
+	}
+
     return (
 		<header className="headerPage">
 			<Row style={{width: '100%'}}>
 				<Col md={12} xs={12}>
 					<Row style={{width: '100%', fontSize: 20}}>
 						<Col md={4} xs={8}>
-							<div className="headerSection">Home</div>
+							<div onClick={() => {redirectTo("/home")}} className="headerSection">Home</div>
 						</Col>
 
 						<Col md={4} xs={8}>
-							<div className="headerSection">News</div>
+							<div onClick={() => {redirectTo("/newsletter")}} className="headerSection">NewsLetter</div>
 						</Col>
 
 						<Col md={4} xs={8}>
