@@ -1,17 +1,17 @@
 import React, {memo} from "react";
 import "../../components/app.scss";
-import { map } from 'lodash';
 import { LoginComponent } from '../../components/login/login-form';
 
 export interface IScreenLogin {
 	redirectSignUp():void;
 	onChangeUserName():void;
 	onChangePassword():void;
+	onLoginSubmit():void;
 }
 
 function _LoginScreen(props:IScreenLogin) {
 
-	const { redirectSignUp, onChangeUserName, onChangePassword } = props;
+	const { redirectSignUp, onChangeUserName, onChangePassword, onLoginSubmit } = props;
 	return (
 		<div className="pageContainer">
 			<div className="loginScreen">
@@ -20,6 +20,7 @@ function _LoginScreen(props:IScreenLogin) {
 					text={"Login"}
 					onChangeUserName={onChangeUserName}
 					onChangePassword={onChangePassword}
+					onLoginSubmit={onLoginSubmit}
 					{...props}
 				/>
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Login } from "../container/login/index";
-import { SignUp } from "../container/sign_up/index"
+import { SignUp } from "../container/sign_up/index";
+import { HomePage } from '../container/home/index';
 
 const Main = (props) => {
 	return (
@@ -19,6 +20,12 @@ const Main = (props) => {
 			<Route exact path="/sign_up"
 				render={() => {
 					return(<SignUp {...props} />)
+				}}
+			/>
+
+			<Route exact path="/home"
+				render={() => {
+					return(<HomePage {...props} />)
 				}}
 			/>
 		</Switch>

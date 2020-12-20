@@ -1,20 +1,35 @@
 import React, {memo} from "react";
 import "../../components/app.scss";
-import { map } from 'lodash';
-import { LoginComponent } from '../../components/login/login-form';
+import { SignUp } from "../../components/sign_up/sign_up";
 
 export interface IScreenSignUp {
-	redirectLogin():void
+	redirectLogin():void;
+	onChangeUserName():void;
+	onChangePassword():void;
+	onRegisterSubmit():void;
+	onReconfirmPassword():void;
+	onChangeRadio():void;
+	onChangeUserAge():void;
+	radioValue: string;
 }
 
 function _SignUpScreen(props:IScreenSignUp) {
 
-	const { redirectLogin } = props;
+	const { radioValue, redirectLogin, onChangeUserAge, onChangeUserName,onChangePassword, onRegisterSubmit, onReconfirmPassword, onChangeRadio } = props;
 	return (
 		<div className="pageContainer">
 			<div className="loginScreen">
 				<h2 className="loginTitle">Sign Up</h2>
-				<LoginComponent
+				<SignUp
+					text={"Register"}
+					onChangeUserName={onChangeUserName}
+					onChangePassword={onChangePassword}
+					onRegisterSubmit={onRegisterSubmit}
+					onReconfirmPassword={onReconfirmPassword}
+					onChangeRadio={onChangeRadio}
+					onChangeUserAge={onChangeUserAge}
+					radioValue={radioValue}
+
 					{...props}
 				/>
 
