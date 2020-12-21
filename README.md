@@ -12,6 +12,7 @@ I am getting CORS issue from the original endpoint so, i take the first 41 data 
 # Feature
 
 1. Login Page
+	default login credentials : username: admin, password: admin123
 2. Responsive for mobile web
 3. Search By university name
 4. Filter by university location
