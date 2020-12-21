@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import { SignUpScreen } from './screen';
 import { message, Modal } from 'antd';
 import { clone, find, uniq } from 'lodash';

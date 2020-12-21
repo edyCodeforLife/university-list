@@ -2,7 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { HomeScreen } from './screen';
 import { chunk, uniq, filter, clone, map, intersection } from 'lodash';
 import {  IUniversityServiceData, UniversityServiceData  } from "../../services/business/university";
-import { IUniversityList } from "../../services/service/university-service"
+import { IUniversityList } from "../../services/service/university-service";
+import { downloadFile } from '../../global/function/global-function';
 
 function _HomePage(props) {
 	const _service: IUniversityServiceData = new UniversityServiceData();
@@ -27,16 +28,6 @@ function _HomePage(props) {
 				setLocationList(uniq(locationUniversity));
 			}
 		})
-	}
-
-	const downloadFile = (exportObj,exportName) => {
-		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
-		var downloadAnchorNode = document.createElement('a');
-		downloadAnchorNode.setAttribute("href",     dataStr);
-		downloadAnchorNode.setAttribute("download", exportName + ".json");
-		document.body.appendChild(downloadAnchorNode); // required for firefox
-		downloadAnchorNode.click();
-		downloadAnchorNode.remove();
 	}
 
 	const downloadFavourite = (item) => {
@@ -85,8 +76,6 @@ function _HomePage(props) {
 	useEffect(() => {
 		getData();
 	}, []);
-
-	console.log(universityListData)
 
 	return (
 		<HomeScreen
