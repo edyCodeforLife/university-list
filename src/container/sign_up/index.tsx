@@ -65,13 +65,14 @@ function _SignUp(props) {
 
 		let cloneUser = clone(LS.get("user"));
 		let isSame = find(cloneUser, {userName: userSignUp.userName, password: userSignUp.password });
+		console.log(isSame)
 		if (userSignUp.userName === "" && userSignUp.password === "" && userSignUp.reConfirmPassword === "" && userSignUp.userAge === 0 && userSignUp.radioValue === "") {
 			warningText = "Harap mengisi semua data yang diperlukan!"
 		} else {
 			if (userSignUp.password !== userSignUp.reConfirmPassword) {
 				warningText = "Password Konfirmasi anda tidak sama dengan password yang anda masukkan!"
 			}
-			if (isSame === undefined) {
+			if (isSame !== undefined) {
 				warningText = "Data User sudah ada!";
 			} else {
 				cloneUser.push(userSignUp);
